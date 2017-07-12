@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Teko');
+
+#countdown-form,
+#countdown {
+	display: block;
+
+	margin: 1em 0;
+}
+
+#countdown #current,
+#countdown #remaining,
+#countdown #formatted {
+	display: block;
+	text-align: center;
+	margin: 0.125em 0;
+
+	font-family: 'Teko', sans-serif;
+	font-size: 16pt;
+}
+
+#countdown #remaining {
+	font-size: 80pt;
+}
