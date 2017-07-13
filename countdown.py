@@ -7,10 +7,11 @@ import json
 from ..applet import Applet
 from time import time
 from datetime import datetime
+from pytz import timezone
 
 class Countdown(Applet):
 
-	dateformat='%Y-%m-%d %H:%M:%S'
+	dateformat='%Y-%m-%d %H:%M:%S (%Z)'
 
 	def __init__(self, config, menus):
 		Applet.__init__(self, config, menus)
@@ -62,7 +63,7 @@ class Countdown(Applet):
 		return json.dumps({'target': target, 'current': current});
 
 	def countdown(self, target, current):
-		tgtfmt=datetime.utcfromtimestamp(target)
+		tgtfmt=datetime.fromtimestamp(target, timezone('UTC'))
 
 		remaining=target - current
 
@@ -70,7 +71,7 @@ class Countdown(Applet):
 			'target': target,
 			'current': current,
 			'remaining': remaining,
-			'formatted': tgtfmt.strftime(self.dateformat) + " UTC"
+			'formatted': tgtfmt.strftime(self.dateformat)
 		})
 
 	def form(self, target):
