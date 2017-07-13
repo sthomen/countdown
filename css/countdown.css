@@ -3,6 +3,7 @@
 #countdown-form,
 #countdown {
 	display: block;
+	text-align: center;
 
 	margin: 1em 0;
 }
@@ -11,13 +12,14 @@
 #countdown #remaining,
 #countdown #formatted {
 	display: block;
-	text-align: center;
 	margin: 0.125em 0;
 
 	font-family: 'Teko', sans-serif;
+	line-height: 1;
 	font-size: 16pt;
 }
 
 #countdown #remaining {
 	font-size: 80pt;
+	text-shadow: 0 0 0.05em rgba(164,0,255,0.75);
 }
