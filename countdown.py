@@ -13,10 +13,8 @@ class Countdown(Applet):
 
 	dateformat='%Y-%m-%d %H:%M:%S (%Z)'
 
-	def __init__(self, config, menus):
-		Applet.__init__(self, config, menus)
-		self.config = config
-
+	def __init__(self):
+		Applet.__init__(self)
 		self.base_path=os.path.dirname(__file__)
 		self.base_url='apps/countdown'
 
