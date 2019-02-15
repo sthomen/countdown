@@ -61,7 +61,10 @@ class Countdown(Applet):
 		return json.dumps({'target': target, 'current': current});
 
 	def countdown(self, target, current):
-		tgtfmt=datetime.fromtimestamp(target, timezone('UTC'))
+		try:
+			tgtfmt=datetime.fromtimestamp(target, timezone('UTC'))
+		except ValueError:
+			return ""
 
 		remaining=target - current
 
