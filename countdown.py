@@ -34,7 +34,7 @@ class Countdown(Applet):
 			return self.ajax_countdown(abs(int(args[2])))
 
 		target=0
-		output=b''
+		output=bytes()
 
 		if len(args) > 1:
 			target=abs(int(args[1]))
@@ -64,7 +64,7 @@ class Countdown(Applet):
 		try:
 			tgtfmt=datetime.fromtimestamp(target, timezone('UTC'))
 		except ValueError:
-			return ""
+			return bytes()
 
 		remaining=target - current
 
