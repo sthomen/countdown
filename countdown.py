@@ -34,7 +34,7 @@ class Countdown(Applet):
 			return self.ajax_countdown(abs(int(args[2])))
 
 		target=0
-		output=''
+		output=b''
 
 		if len(args) > 1:
 			target=abs(int(args[1]))
